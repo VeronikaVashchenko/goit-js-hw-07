@@ -5,7 +5,10 @@ const checkContentInput = event => {
     inputRef.classList.remove('valid');
     return;
   }
-  if (event.target.value.length === event.target.getAttribute('data-length')) {
+  const userInputLength = event.target.value.length;
+  const inputDataLength = event.target.getAttribute('data-length');
+
+  if (String(userInputLength) === inputDataLength) {
     inputRef.classList.remove('invalid');
     inputRef.classList.add('valid');
   } else {
@@ -15,7 +18,8 @@ const checkContentInput = event => {
 };
 inputRef.addEventListener('blur', checkContentInput);
 
-// Напиши скрипт, который бы при потере фокуса на инпуте, проверял его содержимое на правильное количество символов.
+// Напиши скрипт, который бы при потере фокуса на инпуте, проверял его содержимое
+// на правильное количество символов.
 
 // <input
 //   type="text"
@@ -24,7 +28,8 @@ inputRef.addEventListener('blur', checkContentInput);
 //   placeholder="Введи 6 символов"
 // />
 // Сколько символов должно быть в инпуте, указывается в его атрибуте data-length.
-// Если введено подходящее количество, то border инпута становится зеленым, если неправильное - красным.
+// Если введено подходящее количество, то border инпута становится зеленым,
+// если неправильное - красным.
 // Для добавления стилей, используй CSS-классы valid и invalid.
 
 // #validation-input {

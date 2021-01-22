@@ -11,9 +11,10 @@ const ingredientsUlRef = document.querySelector('#ingredients');
 const ingredientsList = ingredients.map(ingredient => {
   const ingredientsLiRef = document.createElement('li');
   ingredientsLiRef.textContent = ingredient;
-  console.log(ingredientsLiRef);
-  ingredientsUlRef.appendChild(ingredientsLiRef);
+  return ingredientsLiRef;
 });
+
+ingredientsUlRef.append(...ingredientsList);
 
 // В HTML есть пустой список ul#ingredients.
 

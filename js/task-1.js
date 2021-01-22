@@ -1,14 +1,12 @@
 const items = document.querySelectorAll('li.item');
 console.log(`В списке ${items.length} катерогии.`);
-const ul = Array.from(document.querySelector('#categories').children);
-for (let elem of ul) {
-  let category = elem.firstElementChild.textContent;
-  let quantityElem = elem.lastElementChild.children.length;
-  console.log(
-    `Категория: ${category}`,
-    `\r\nКоличество элементов: ${quantityElem}`,
-  );
-}
+const ulChildren = Array.from(items);
+ulChildren.forEach(elem => {
+  const elemText = elem.querySelector('h2').textContent;
+  console.log(`Категория: ${elemText}`);
+  const quantityEl = elem.querySelectorAll('li').length;
+  console.log(`Количество элементов: ${quantityEl}`);
+});
 
 // В HTML есть список категорий ul#categories.
 
@@ -46,9 +44,12 @@ for (let elem of ul) {
 // </ul>
 // Напиши скрипт, который выполнит следующие операции.
 
-// Посчитает и выведет в консоль количество категорий в ul#categories, то есть элементов li.item. Получится 'В списке 3 категории.'.
+// Посчитает и выведет в консоль количество категорий в ul#categories, то есть
+// элементов li.item.Получится 'В списке 3 категории.'.
 
-// Для каждого элемента li.item в списке ul#categories, найдет и выведет в консоль текст заголовка элемента (тега h2) и количество элементов в категории (всех вложенных в него элементов li).
+// Для каждого элемента li.item в списке ul#categories, найдет и выведет в консоль
+// текст заголовка элемента(тега h2) и количество элементов в категории(всех
+// вложенных в него элементов li).
 
 // Например для первой категории получится:
 
